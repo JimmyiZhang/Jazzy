@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.6.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="1.2.0" />
+    <PackageReference Include="MSTest.TestFramework" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Jazzy.Component\Jazzy.Component.csproj" />
+    <ProjectReference Include="..\..\src\Jazzy.Infrastructure\Jazzy.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Jazzy.Library.Utility\Jazzy.Library.Utility.csproj" />
+    <ProjectReference Include="..\..\src\Jazzy.Library\Jazzy.Library.csproj" />
+  </ItemGroup>
+</Project>
