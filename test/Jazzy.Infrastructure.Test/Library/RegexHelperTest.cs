@@ -43,7 +43,7 @@ namespace Jazzy.Infrastructure.Test.Library
         {
             // 匹配分组
             var input = "Some animals eat other animals for food";
-            var actual = RegexHelper.MatchGroups(input, "^(?<aw>\\w*a\\w*)$", "aw");
+            var actual = RegexHelper.MatchGroups(input, "(?<aw>\\w*a\\w*)", "aw");
 
             Assert.AreEqual(actual, "an");
         }
