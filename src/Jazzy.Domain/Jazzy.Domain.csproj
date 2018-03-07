@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Description>基于领域的实体类，包括领域实体及方法</Description>
+    <Authors>jimmy</Authors>
+    <Company>jazzy.com</Company>
+    <Product>领域实体</Product>
+    <Version>1.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\Carbycar.Logistics.Domain.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jazzy.Component\Jazzy.Component.csproj" />
+    <ProjectReference Include="..\Jazzy.Library\Jazzy.Library.csproj" />
+  </ItemGroup>
+
+</Project>

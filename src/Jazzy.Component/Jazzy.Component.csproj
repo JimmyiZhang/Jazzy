@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Authors>Jimmy</Authors>
+    <Company>Jazzy.Jimmy</Company>
+    <Product>通用组件</Product>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>

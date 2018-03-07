@@ -37,15 +37,5 @@ namespace Jazzy.Infrastructure.Test.Library
 
             Assert.AreEqual(actual, "an");
         }
-
-        [TestMethod]
-        public void RegexHelper_MatchGroups()
-        {
-            // 匹配分组
-            var input = "Some animals eat other animals for food";
-            var actual = RegexHelper.MatchGroups(input, "(?<aw>\\w*a\\w*)", "aw");
-
-            Assert.AreEqual(actual, "an");
-        }
     }
 }

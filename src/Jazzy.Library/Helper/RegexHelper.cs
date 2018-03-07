@@ -38,31 +38,6 @@ namespace Jazzy.Library
         /// </summary>
         /// <param name="input">输入</param>
         /// <param name="pattern">表达式</param>
-        /// <param name="groups">分组集合</param>
-        /// <returns>匹配结果</returns>
-        public static string[] MatchGroups(string input, string pattern, params string[] groups)
-        {
-            if (string.IsNullOrEmpty(input) || string.IsNullOrEmpty(pattern) || groups == null)
-                return null;
-
-            Regex reg = new Regex(pattern);
-            var mathes = reg.Matches(input);
-            if (mathes.Count == 0) return null;
-
-            string[] result = new string[groups.Length];
-            for (int i = 0; i < groups.Length; i++)
-            {
-                result[i] = mathes[0].Groups[groups[i]].Value;
-            }
-
-            return result;
-        }
-
-        /// <summary>
-        /// 获取分组匹配(第一个匹配)的字符串
-        /// </summary>
-        /// <param name="input">输入</param>
-        /// <param name="pattern">表达式</param>
         /// <param name="group">分组</param>
         /// <returns>匹配结果</returns>
         public static string MatchGroup(string input, string pattern, string group)

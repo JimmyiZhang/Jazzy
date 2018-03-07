@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="linq2db.Core" Version="1.10.2" />
+    <PackageReference Include="linq2db.SQLite" Version="1.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Jazzy.Component\Jazzy.Component.csproj" />
+    <ProjectReference Include="..\Jazzy.Library\Jazzy.Library.csproj" />
+  </ItemGroup>
+
+</Project>

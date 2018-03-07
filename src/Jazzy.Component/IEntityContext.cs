@@ -23,10 +23,7 @@ namespace Jazzy.Component
 
         void Update<TEntity>(Expression<Func<TEntity, TEntity>> setter, Expression<Func<TEntity, bool>> filter) where TEntity : class;
 
-        void Commit();
 
-        void Rollback();
-        
         /// <summary>
         /// 通过sql语句查询
         /// </summary>
@@ -43,6 +40,11 @@ namespace Jazzy.Component
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         void ExecuteSql(string sql, params object[] parameters);
+
+
+        void Commit();
+
+        void Rollback();
     }
 }
 
