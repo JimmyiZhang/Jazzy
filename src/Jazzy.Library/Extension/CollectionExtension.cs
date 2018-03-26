@@ -146,7 +146,7 @@ namespace Jazzy.Library
         /// </summary>
         /// <typeparam name="T">类型</typeparam>
         /// <param name="sources">源数据</param>
-        /// <param name="targets">合并的数据</param>
+        /// <param name="targets">合并数据</param>
         /// <param name="codition">合并的条件</param>
         public static void Merge<T>(this IList<T> sources, IList<T> targets, Func<T, T, bool> codition)
         {
@@ -170,6 +170,42 @@ namespace Jazzy.Library
                 {
                     sources.RemoveAt(i - 1);
                 }
+            }
+        }
+
+        /// <summary>
+        /// 根据映射合并到集合中
+        /// </summary>
+        /// <typeparam name="TSource">源类型</typeparam>
+        /// <typeparam name="TTarget">合并类型</typeparam>
+        /// <param name="sources">源数据</param>
+        /// <param name="targets">合并数据</param>
+        /// <param name="map">合并的映射条件</param>
+        public static void Merge<TSource, TTarget>(this IList<TSource> sources, IList<TTarget> targets, Func<TTarget, TSource> map)
+        {
+            if (targets == null) return;
+            if (targets == null) return;
+
+            foreach (var target in targets)
+            {
+                sources.Add(map(target));
+            }
+        }
+
+        /// <summary>
+        /// 合并集合
+        /// </summary>
+        /// <typeparam name="T">源类型</typeparam>
+        /// <param name="sources">源数据</param>
+        /// <param name="targets">合并数据</param>
+        public static void Merge<T>(this IList<T> sources, IList<T> targets)
+        {
+            if (targets == null) return;
+            if (targets == null) return;
+
+            foreach (var target in targets)
+            {
+                sources.Add(target);
             }
         }
     }

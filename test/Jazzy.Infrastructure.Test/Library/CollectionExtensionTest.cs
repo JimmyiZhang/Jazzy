@@ -10,6 +10,8 @@ namespace Jazzy.Infrastructure.Test.Library
     {
         private IList<SimpleModel> sources;
         private IList<SimpleModel> compared;
+        private IList<SimpleModelTarget> targets;
+
         [TestInitialize]
         public void Init()
         {
@@ -26,6 +28,14 @@ namespace Jazzy.Infrastructure.Test.Library
                  new SimpleModel(){ Name="Jimmy",Age=22},
                  new SimpleModel(){ Name="Jimmy1",Age=23},
                  new SimpleModel(){ Name="Jimmy2",Age=24},
+            };
+
+            this.targets = new List<SimpleModelTarget>()
+            {
+                 new SimpleModelTarget(){ Name="Jimmy",Age=30},
+                 new SimpleModelTarget(){ Name="Fay",Age=18},
+                 new SimpleModelTarget(){Name="Amy",Age=60},
+                 new SimpleModelTarget(){ Name="David",Age=20},
             };
         }
 
@@ -60,6 +70,31 @@ namespace Jazzy.Infrastructure.Test.Library
             var jimmy = this.sources.First();
             Assert.AreEqual(this.sources.Count(), 1);
             Assert.AreEqual(jimmy.Age, 22);
+        }
+
+        [TestMethod]
+        public void CollectionExtension_Merge_Map()
+        {
+            // 满足Name相同进行合并
+            this.sources.Merge(this.targets,
+                a => new SimpleModel()
+                {
+                    Age = a.Age,
+                    Name = a.Name
+                });
+
+            var count = this.sources.Count();
+            Assert.AreEqual(count, 8);
+        }
+
+        [TestMethod]
+        public void CollectionExtension_Merge_Arange()
+        {
+            // 满足Name相同进行合并
+            this.sources.Merge(this.compared);
+
+            var count = this.sources.Count();
+            Assert.AreEqual(count, 7);
         }
 
         [TestMethod]
