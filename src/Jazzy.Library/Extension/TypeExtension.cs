@@ -106,5 +106,18 @@ namespace Jazzy.Library
             }
             return AsGeneric(baseType, genericType);
         }
+
+        /// <summary>
+        /// 判断当前类型是否继承指定接口
+        /// </summary>
+        /// <param name="givenType">给定类型</param>
+        /// <param name="baseType">接口类型</param>
+        /// <returns></returns>
+        public static bool AsInterface(this Type givenType, Type baseType)
+        {
+            var types = givenType.GetInterfaces();
+
+            return types.Any(a => a == baseType);
+        }
     }
 }
